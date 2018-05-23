@@ -17,7 +17,7 @@ class MyTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        self.title = "배달의 DIT"
+        self.title = "DIT 배달통"
     }
     
     // MARK: - Table view data source
@@ -44,6 +44,27 @@ class MyTableViewController: UITableViewController {
         cell.foodStoreCellTel.text = foodStoreTel[indexPath.row]
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        print(foodStoreNames[indexPath.row])
+        print(foodStoreTel[indexPath.row])
+        
+        //전화걸기 alert
+        let optionMenu = UIAlertController(title: "전화걸기 : " + foodStoreNames[indexPath.row], message: foodStoreTel[indexPath.row], preferredStyle: .actionSheet)
+        let callAction = UIAlertAction(title: "전화를 거시겠습니까?", style: .default) {
+            (action: UIAlertAction) -> Void in
+            let alert = UIAlertController(title: "전화 거는 중", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "뚜루뚜두", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        optionMenu.addAction(callAction)
+        optionMenu.addAction(cancelAction)
+        present(optionMenu, animated: true, completion: nil)
     }
     
 
