@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,6 +74,7 @@
                                     <outlet property="foodStoreCellImage" destination="uLF-IA-CGa" id="4gR-iG-Cae"/>
                                     <outlet property="foodStoreCellName" destination="EP0-U3-IPt" id="Qog-ZS-x5j"/>
                                     <outlet property="foodStoreCellTel" destination="seM-7D-bcq" id="gJl-6Z-ZZF"/>
+                                    <segue destination="rTk-ZX-IXD" kind="show" identifier="showDetail" id="Bnp-yG-IqM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,6 +88,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppm-sE-6qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="960.79999999999995" y="59.820089955022496"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="dCS-vR-Y9R">
+            <objects>
+                <viewController id="rTk-ZX-IXD" customClass="DetailViewController" customModule="UiTableViewController_Test_02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LqA-CH-vwv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01" translatesAutoresizingMaskIntoConstraints="NO" id="9YQ-Gp-nb7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="291"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTm-QC-2W8">
+                                <rect key="frame" x="55" y="422" width="304" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="tel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbR-3g-wPb">
+                                <rect key="frame" x="55" y="493" width="304" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9YQ-Gp-nb7" firstAttribute="trailing" secondItem="2i8-vt-lhr" secondAttribute="trailing" id="0ar-9v-wVq"/>
+                            <constraint firstItem="9YQ-Gp-nb7" firstAttribute="top" secondItem="2i8-vt-lhr" secondAttribute="top" id="G1m-Hb-Qp0"/>
+                            <constraint firstItem="2i8-vt-lhr" firstAttribute="bottom" secondItem="9YQ-Gp-nb7" secondAttribute="bottom" constant="312" id="nax-rV-oHh"/>
+                            <constraint firstItem="9YQ-Gp-nb7" firstAttribute="leading" secondItem="2i8-vt-lhr" secondAttribute="leading" id="t1I-Pp-6LB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2i8-vt-lhr"/>
+                    </view>
+                    <connections>
+                        <outlet property="cellImageView" destination="9YQ-Gp-nb7" id="gcz-ID-ghm"/>
+                        <outlet property="lbllocation" destination="wTm-QC-2W8" id="OFn-vF-5iq"/>
+                        <outlet property="lbltel" destination="vbR-3g-wPb" id="rrc-o7-pzC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lTd-kS-vSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709.5999999999999" y="59.820089955022496"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="STE-sq-WCd">
@@ -106,4 +153,7 @@
             <point key="canvasLocation" x="192" y="60.26986506746627"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="01" width="800" height="800"/>
+    </resources>
 </document>
