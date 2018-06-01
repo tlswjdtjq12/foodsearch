@@ -4,8 +4,18 @@ class MyTableViewController: UITableViewController {
     
     var foodStoreNames = ["늘해랑", "번개반점", "아딸", "왕짜장", "토마토 도시락", "홍콩반점"]
     var foodStoreThumbnail = ["01", "02", "03", "04", "05", "06"]
-    var foodStoreAddress = ["부산시 부산진구 양정동 418-282", "부산시 부산진구 양정동 418-282", "부산시 부산진구 양정동 418-282", "부산시 부산진구 양정동 418-282", "부산시 부산진구 양정동 418-282", "부산시 부산진구 양정동 418-282"]
-    var foodStoreTel = ["051-852-9969", "051-852-9969", "051-852-9969", "051-852-9969", "051-852-9969", "051-852-9969"]
+    var foodStoreAddress = ["부산 부산진구 양정동 양정1동 350-1",
+                            "부산시 부산진구 양정동 418-282",
+                            "부산광역시 부산진구 양정동 393-18",
+                            "부산광역시 부산진구 양정1동 356-22",
+                            "부산광역시 부산진구 양정1동 350-1",
+                            "부산 부산진구 양정동 양정동 353-38"]
+    var foodStoreTel = ["051-863-6997",
+                        "051-852-9969",
+                        "051-852-9969",
+                        "051-852-9969",
+                        "051-852-9969",
+                        "051-853-0410"]
     var foodMenus = ["수육백반, 돼지국밥, 순대국밥, 내장국밥",
                      "짜장면, 짬뽕, 짬짜면, 탕수육, 탕짜면, 군만두, 양장피",
                      "떡볶이, 오뎅, 떡강정, 핫도그, 튀김",
@@ -13,6 +23,8 @@ class MyTableViewController: UITableViewController {
                      "치킨마요, 참치마요, 돈불와퍼, 돈치와퍼, 돈까스카레",
                      "짬뽕, 짜장면, 짬뽕밥, 볶음밥, 탕수육, 군만두"
     ]
+    
+    var foodStoreType = ["돼지국밥집", "중화요리", "분식점", "중화요리", "도시락", "중화요리"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,77 +79,7 @@ class MyTableViewController: UITableViewController {
         print(foodStoreNames[indexPath.row])
         print(foodStoreTel[indexPath.row])
         
-        /*
-         //전화걸기 alert
-         let optionMenu = UIAlertController(title: "전화걸기 : " + foodStoreNames[indexPath.row], message: foodStoreTel[indexPath.row], preferredStyle: .actionSheet)
-         let callAction = UIAlertAction(title: "전화를 거시겠습니까?", style: .default) {
-         (action: UIAlertAction) -> Void in
-         let alert = UIAlertController(title: "전화 거는 중", message: nil, preferredStyle: .alert)
-         alert.addAction(UIAlertAction(title: "뚜루뚜두", style: .default, handler: nil))
-         self.present(alert, animated: true)
-         }
-         
-         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-         
-         optionMenu.addAction(callAction)
-         optionMenu.addAction(cancelAction)
-         present(optionMenu, animated: true, completion: nil)
-         */
     }
-    
-    
-    
-    // Override to support conditional editing of the table view.
-    //    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-    //        // Return false if you do not want the specified item to be editable.
-    //        return false
-    //    }
-    //
-    
-    // Override to support editing the table view.
-    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    //        if editingStyle == .delete {
-    //            // Delete the row from the data source
-    //            //tableView.deleteRows(at: [indexPath], with: .fade)
-    //
-    //         foodStoreNames.remove(at: indexPath.row)
-    //            foodStoreAddress.remove(at: indexPath.row)
-    //            foodStoreTel.remove(at: indexPath.row)
-    //            foodStoreThumbnail.remove(at: indexPath.row)
-    //
-    //            tableView.deleteRows(at: [indexPath], with: .fade)
-    //            //tableView.reloadData()
-    //
-    //        }
-    //        } else if editingStyle == .insert {
-    //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    //        }
-    // }
-    
-    
-    
-    // Override to support rearranging the table view.
-    //    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-    //
-    //        let tmp1 = foodStoreNames[to.row]
-    //            foodStoreNames[to.row] = foodStoreNames[fromIndexPath.row]
-    //            foodStoreNames[fromIndexPath.row] = tmp1
-    //
-    //        let tmp2 = foodStoreThumbnail[to.row]
-    //        foodStoreThumbnail[to.row] = foodStoreThumbnail[fromIndexPath.row]
-    //        foodStoreThumbnail[fromIndexPath.row] = tmp2
-    //
-    //            tableView.reloadData()
-    //    }
-    
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
     
     
     // MARK: - Navigation
@@ -149,12 +91,14 @@ class MyTableViewController: UITableViewController {
             if let indexPath =  tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! DetailViewController
                 // 이름 넘기기
-                destinationController.title = foodStoreNames[indexPath.row]
+                destinationController.name = foodStoreNames[indexPath.row]
                 // 이미지 넘기기
                 destinationController.cellImage = foodStoreThumbnail[indexPath.row]
                 destinationController.local1 = foodStoreAddress[indexPath.row]
                 destinationController.tel1 = foodStoreTel[indexPath.row]
                 destinationController.menu = foodMenus[indexPath.row]
+                destinationController.type = foodStoreType[indexPath.row]
+                
             }
         }
     }

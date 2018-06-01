@@ -97,7 +97,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9YQ-Gp-nb7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9YQ-Gp-nb7">
                                 <rect key="frame" x="0.0" y="64" width="375" height="291"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="291" id="cP9-OB-fAD"/>
@@ -145,7 +145,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nK9-W4-yUK">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="XZA-Ku-KaT">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="XZA-Ku-KaT">
                             <connections>
                                 <segue destination="wov-YG-iKO" kind="show" identifier="goMap" id="uIY-Cc-thD"/>
                             </connections>
@@ -154,6 +154,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cellImageView" destination="9YQ-Gp-nb7" id="gcz-ID-ghm"/>
+                        <outlet property="detailMapView" destination="PnD-jI-vde" id="0mH-T8-VIk"/>
                         <outlet property="detailTableView" destination="Bgr-FQ-YRN" id="vwU-gV-Ry7"/>
                     </connections>
                 </viewController>
@@ -209,4 +210,7 @@
             <point key="canvasLocation" x="192" y="60.26986506746627"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Map" width="25" height="25"/>
+    </resources>
 </document>
