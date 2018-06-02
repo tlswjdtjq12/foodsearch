@@ -9,11 +9,11 @@
 import UIKit
 import MapKit
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate {
 
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var cellImageView: UIImageView!
-    @IBOutlet weak var detailMapView: MKMapView!
+    
     
     var cellImage: String = ""
     var name: String = ""
@@ -28,10 +28,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         detailTableView.delegate = self
         detailTableView.dataSource = self
         
+//        detailMapView.delegate = self
+        
         cellImageView.image = UIImage(named: cellImage)
         self.title = name
         
-        goMapView()
+//        goMapView()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,55 +41,98 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
         
         switch indexPath.row {
         case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
             cell.textLabel?.text = "주소 : " + local1
             return cell
         case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
             cell.textLabel?.text = "전화번호 : " + tel1
             return cell
-        default:
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath)
             cell.textLabel?.text = "메뉴 : " + menu
+            return cell
+        default :
+            let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! MapTableViewCell
             return cell
         }
     }
+}
     
+ /*
     // MapView
     func goMapView() {
-        
+
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(local1, completionHandler: {
-            
-            placemarks, error in
+//        geoCoder.geocodeAddressString(local1, completionHandler: {
+//
+//            (placemarks: [CLPlacemark]?, error: Error?) -> Void in
+//
+//            if let error = error {
+//                print(error)
+//                return
+//            }
+//
+//            if placemarks != nil {
+//                let placemark = placemarks![0]
+//
+//                // Add annotation
+//                let annotation = MKPointAnnotation()
+//                annotation.title = self.name
+//                annotation.subtitle = self.type
+//
+//                if let location = placemark.location {
+//                    annotation.coordinate = location.coordinate
+//
+//                    // Display annotation
+//                    self.detailMapView.showAnnotations([annotation], animated: true)
+//                }
+//            }
+//
+//        })
+//    }
+    
+      geoCoder.geocodeAddressString(local1) {
+
+            (placemarks: [CLPlacemark]?, error: Error?) -> Void in
             if let error = error {
                 print(error)
                 return
             }
-            
+
             if placemarks != nil {
                 let placemark = placemarks![0]
-                
+
                 // Add annotation
                 let annotation = MKPointAnnotation()
                 annotation.title = self.name
                 annotation.subtitle = self.type
-                
+
                 if let location = placemark.location {
                     annotation.coordinate = location.coordinate
+                    self.detailMapView.addAnnotation(annotation)
                     
-                    // Display annotation
-                    self.detailMapView.showAnnotations([annotation], animated: true)
+                    // Set zoom level
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    self.detailMapView.setRegion(region, animated: true)
+//                    self.detailMapView.showAnnotations([annotation], animated: true)
                 }
             }
-            
-        })
+        }
     }
+    
+//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        print("tapped callout")
+//    }
+    
         
         //storeMapView.mapType = MKMapType.hybrid
         // 늘해랑 35.172566, 129.071734
@@ -116,3 +161,4 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     */
 
 }
+ */
