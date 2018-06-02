@@ -83,7 +83,9 @@
                             <outlet property="delegate" destination="cFp-Sf-CKj" id="JhQ-2C-NdH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="fHx-4e-WvK"/>
+                    <navigationItem key="navigationItem" id="fHx-4e-WvK">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="kxV-Wm-Hc0"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppm-sE-6qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,4 +227,7 @@
             <point key="canvasLocation" x="192" y="60.26986506746627"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Map" width="25" height="25"/>
+    </resources>
 </document>
