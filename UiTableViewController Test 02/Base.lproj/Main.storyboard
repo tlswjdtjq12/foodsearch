@@ -166,9 +166,7 @@
                         <viewLayoutGuide key="safeArea" id="2i8-vt-lhr"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="nK9-W4-yUK">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="XZA-Ku-KaT"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="nK9-W4-yUK"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cellImageView" destination="9YQ-Gp-nb7" id="gcz-ID-ghm"/>
@@ -227,7 +225,4 @@
             <point key="canvasLocation" x="192" y="60.26986506746627"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Map" width="25" height="25"/>
-    </resources>
 </document>
