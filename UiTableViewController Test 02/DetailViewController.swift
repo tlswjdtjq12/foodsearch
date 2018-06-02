@@ -61,95 +61,15 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
         default :
             let cell = tableView.dequeueReusableCell(withIdentifier: "mapCell", for: indexPath) as! MapTableViewCell
+            cell.configure(location: local1)
             return cell
         }
     }
-}
+
     
- /*
-    // MapView
-    func goMapView() {
+ 
 
-        let geoCoder = CLGeocoder()
-//        geoCoder.geocodeAddressString(local1, completionHandler: {
-//
-//            (placemarks: [CLPlacemark]?, error: Error?) -> Void in
-//
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//
-//            if placemarks != nil {
-//                let placemark = placemarks![0]
-//
-//                // Add annotation
-//                let annotation = MKPointAnnotation()
-//                annotation.title = self.name
-//                annotation.subtitle = self.type
-//
-//                if let location = placemark.location {
-//                    annotation.coordinate = location.coordinate
-//
-//                    // Display annotation
-//                    self.detailMapView.showAnnotations([annotation], animated: true)
-//                }
-//            }
-//
-//        })
-//    }
-    
-      geoCoder.geocodeAddressString(local1) {
-
-            (placemarks: [CLPlacemark]?, error: Error?) -> Void in
-            if let error = error {
-                print(error)
-                return
-            }
-
-            if placemarks != nil {
-                let placemark = placemarks![0]
-
-                // Add annotation
-                let annotation = MKPointAnnotation()
-                annotation.title = self.name
-                annotation.subtitle = self.type
-
-                if let location = placemark.location {
-                    annotation.coordinate = location.coordinate
-                    self.detailMapView.addAnnotation(annotation)
-                    
-                    // Set zoom level
-                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
-                    self.detailMapView.setRegion(region, animated: true)
-//                    self.detailMapView.showAnnotations([annotation], animated: true)
-                }
-            }
-        }
-    }
-    
-//    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-//        print("tapped callout")
-//    }
-    
-        
-        //storeMapView.mapType = MKMapType.hybrid
-        // 늘해랑 35.172566, 129.071734
-//        let location = CLLocationCoordinate2DMake(35.172566, 129.071734)
-//        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
-//        let region = MKCoordinateRegion(center: location, span: span)
-//        detailMapView.setRegion(region, animated: true)
-//
-//        // pin 꼽기
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = location
-//        annotation.title = "늘해랑"
-//        annotation.subtitle = "TEL:051-860-3210"
-//        detailMapView.addAnnotation(annotation)
-//        detailMapView.selectAnnotation(annotation, animated: true)
-//    }
-
-    /*
+    //
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -157,7 +77,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+   
 
 }
- */
+
