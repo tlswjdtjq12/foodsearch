@@ -10,6 +10,8 @@ import UIKit
 
 class TotalMapViewController: UIViewController {
 
+    var location = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

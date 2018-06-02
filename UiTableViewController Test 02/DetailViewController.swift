@@ -64,18 +64,22 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             cell.configure(location: local1)
             return cell
         }
-    }
-
-    
- 
+    } 
 
     //
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "detailMapView" {
+            if detailTableView.indexPathForSelectedRow != nil {
+                let destinationController = segue.destination as! MapViewController
+                destinationController.location = local1
+                destinationController.name = name
+                destinationController.tel = tel1
+            }
+        }
+        
     }
    
 
