@@ -1,4 +1,4 @@
-# DIT-Food-Finder-Map-Geocoding
+# DIT FoodStore Finder v0.1
 
 Screenshots
 ------------
