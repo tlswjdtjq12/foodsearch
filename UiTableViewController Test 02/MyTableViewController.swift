@@ -4,12 +4,12 @@ class MyTableViewController: UITableViewController {
     
     var foodStoreNames = ["늘해랑", "번개반점", "아딸", "왕짜장", "토마토 도시락", "홍콩반점"]
     var foodStoreThumbnail = ["01", "02", "03", "04", "05", "06"]
-    var foodStoreAddress = ["부산 부산진구 양정동 양정1동 350-1",
-                            "부산시 부산진구 양정동 418-282",
+    var foodStoreAddress = ["부산광역시 부산진구 양정1동 350-1",
+                            "부산광역시 부산진구 양정동 418-282",
                             "부산광역시 부산진구 양정동 393-18",
                             "부산광역시 부산진구 양정1동 356-22",
                             "부산광역시 부산진구 양정1동 350-1",
-                            "부산 부산진구 양정동 양정동 353-38"]
+                            "부산광역시 부산진구 양정동 353-38"]
     var foodStoreTel = ["051-863-6997",
                         "051-852-9969",
                         "051-852-9969",
@@ -35,19 +35,7 @@ class MyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.title = "DIT 배달통"
-        //tableView.isEditing = true
     }
-    
-    
-    //    @IBAction func editable(_ sender: Any) {
-    //
-    //        tableView.isEditing = true
-    //    }
-    //
-    //    @IBAction func nonEditable(_ sender: Any) {
-    //        tableView.isEditing = false
-    //    }
-    
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,9 +66,7 @@ class MyTableViewController: UITableViewController {
         print(indexPath.row)
         print(foodStoreNames[indexPath.row])
         print(foodStoreTel[indexPath.row])
-        
     }
-    
     
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -100,6 +86,17 @@ class MyTableViewController: UITableViewController {
                 destinationController.type = foodStoreType[indexPath.row]
                 
             }
+        } else if segue.identifier == "totalMapView" {
+                let destinationController = segue.destination as! TotalMapViewController
+                // 이름 넘기기
+            destinationController.name = foodStoreNames
+                print(destinationController.name)
+                // 이미지 넘기기
+                //destinationController.cellImage = foodStoreThumbnail[indexPath.row]
+            destinationController.locations = foodStoreAddress 
+                //destinationController.tel1 = foodStoreTel[indexPath.row]
+                //destinationController.menu = foodMenus[indexPath.row]
+                destinationController.type = foodStoreType
         }
     }
 }

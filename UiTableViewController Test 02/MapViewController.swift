@@ -66,8 +66,6 @@ class MapViewController: UIViewController {
 //        storeMapView.selectAnnotation(annotation, animated: true)
     }
 
-    
-
     /*
     // MARK: - Navigation
 
