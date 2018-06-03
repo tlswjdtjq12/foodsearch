@@ -28,12 +28,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         detailTableView.delegate = self
         detailTableView.dataSource = self
         
-//        detailMapView.delegate = self
-        
         cellImageView.image = UIImage(named: cellImage)
         self.title = name
-        
-//        goMapView()
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -81,7 +77,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-   
 
 }
 
