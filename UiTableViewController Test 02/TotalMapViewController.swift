@@ -61,7 +61,6 @@ class TotalMapViewController: UIViewController {
                         }
                         self.totalMapView.showAnnotations(self.annotations, animated: true)
                     })
-        
                 }
     }
     
