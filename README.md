@@ -15,7 +15,7 @@
 * 자신이 하지 않은 것(남의 것)을 가지고 와서 검사 받는 학생들은 크게 감점함
 * 자신의 github에 올리고 계속 commit하여 최종 결과물을 만들기(commit history 확인함) 
 ------------
-Open Source Screenshots
+Source Screenshots
 ------------
 
 <div>
