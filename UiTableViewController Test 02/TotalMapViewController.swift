@@ -12,9 +12,11 @@ import MapKit
 class TotalMapViewController: UIViewController {
 
     @IBOutlet weak var totalMapView: MKMapView!
-    var locations: [String] = []
-    var name:[String] = []
-    var type:[String] = []
+//    var locations: [String] = []
+//    var name:[String] = []
+//    var type:[String] = []
+    
+    var totalFoodStores: [FoodStore] = []
     var annotations = [MKPointAnnotation]()
     
     // name[], type[] 배열 값 받기 위한 인덱스
@@ -22,13 +24,13 @@ class TotalMapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewMap(locations: locations, name: name, type: type)
+        viewMap(items: totalFoodStores)
     }
     
-    func  viewMap(locations:[String], name:[String], type:[String]) {
-        for loc in locations {
+    func  viewMap(items: [FoodStore]) {
+        for item in items {
             let geoCoder = CLGeocoder()
-            geoCoder.geocodeAddressString(loc , completionHandler: {
+            geoCoder.geocodeAddressString(item.address , completionHandler: {
                 (placemarks: [CLPlacemark]?, error: Error?) -> Void in
                 if let error = error {
                     print(error)
@@ -44,9 +46,8 @@ class TotalMapViewController: UIViewController {
 
                     if let location = placemark.location {
                         // Add annotation
-                        annotation.title = self.name[self.count]
-                        annotation.subtitle = self.type[self.count]
-                        self.count = self.count + 1
+                        annotation.title = item.name
+                        annotation.subtitle = item.type
                         annotation.coordinate = location.coordinate
                         self.annotations.append(annotation)
                         self.totalMapView.addAnnotations(self.annotations)
