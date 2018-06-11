@@ -12,15 +12,8 @@ import MapKit
 class TotalMapViewController: UIViewController {
 
     @IBOutlet weak var totalMapView: MKMapView!
-//    var locations: [String] = []
-//    var name:[String] = []
-//    var type:[String] = []
-    
     var totalFoodStores: [FoodStore] = []
     var annotations = [MKPointAnnotation]()
-    
-    // name[], type[] 배열 값 받기 위한 인덱스
-    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()

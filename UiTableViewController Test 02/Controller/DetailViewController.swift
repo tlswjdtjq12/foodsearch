@@ -14,7 +14,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var cellImageView: UIImageView!
     
-    
     var cellImage: String = ""
     var name: String = ""
     var local1: String = ""
