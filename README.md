@@ -33,4 +33,5 @@ App Icon 자동 생성 도구
 ---
 https://appicon.co/
 
+<img width="800" alt="2018-06-13 11 20 44" src="https://user-images.githubusercontent.com/1857075/41357309-d04414cc-6f60-11e8-90d5-9c3fc831dad6.png">
 
