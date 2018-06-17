@@ -35,3 +35,8 @@ https://appicon.co/
 
 <img width="800" alt="2018-06-13 11 20 44" src="https://user-images.githubusercontent.com/1857075/41357309-d04414cc-6f60-11e8-90d5-9c3fc831dad6.png">
 
+---
+App Display Name 설정
+----
+<img width="600" alt="2018-06-17 11 42 09" src="https://user-images.githubusercontent.com/1857075/41509024-33060168-7288-11e8-8e13-17a02f7210a0.png">
+
