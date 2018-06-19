@@ -11,6 +11,8 @@
 * 똑 같은 내용(UI 및 코드 등)은 모두 감점 처리 함
 * 자신이 하지 않은 것(남의 것)을 가지고 와서 검사 받는 학생들은 크게 감점함
 * 자신의 github에 올리고 계속 commit하여 최종 결과물을 만들기(commit history 확인함) 
+* Github 레파지토리 이름 : DIT_Food_Term_Project
+* Github README.md 화일에 자신이 제작한 프로젝트 설명을 잘 하기 바람, Commit log, issues 등을 잘 기록 바랍(문서화는 성적에 영향을 많이 미침)
 ------------
 Source Screenshots
 ------------
