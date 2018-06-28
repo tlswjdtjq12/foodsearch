@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="zrU-PA-lHz">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="zrU-PA-lHz">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -88,12 +88,31 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="I1R-22-1O3">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="exy-YD-lrD">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jgr-wB-K1O">
+                                <rect key="frame" x="16" y="7" width="215" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="red"/>
+                                    <segment title="blue"/>
+                                    <segment title="green"/>
+                                    <segment title="Brown"/>
+                                </segments>
+                                <connections>
+                                    <action selector="scaSegmentaTapped:" destination="cFp-Sf-CKj" eventType="valueChanged" id="mlW-wf-z2c"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="Map" id="IWz-30-5Qd"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scSegment" destination="jgr-wB-K1O" id="gkR-q7-QcN"/>
+                        <outlet property="vwView" destination="lJF-Ab-udf" id="b9R-Os-8uG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ppm-sE-6qu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="473" y="45"/>
+            <point key="canvasLocation" x="-566" y="-14"/>
         </scene>
         <!--Total Map View Controller-->
         <scene sceneID="iZh-Nt-2iR">
@@ -122,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CtE-7I-XWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1143" y="537"/>
+            <point key="canvasLocation" x="498" y="618"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="dCS-vR-Y9R">
@@ -210,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTd-kS-vSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1142" y="-28"/>
+            <point key="canvasLocation" x="510" y="-63"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="YDc-J2-SDr">
@@ -239,7 +258,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qJf-NZ-qX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2810" y="-45"/>
+            <point key="canvasLocation" x="1372" y="164"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="STE-sq-WCd">
@@ -257,7 +276,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0J-qn-R0p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234" y="45"/>
+            <point key="canvasLocation" x="-1479" y="31"/>
         </scene>
     </scenes>
     <resources>
