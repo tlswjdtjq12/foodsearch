@@ -1,9 +1,19 @@
 import UIKit
 
-class MyTableViewController: UITableViewController {
+class MyTableViewController: UITableViewController, UITableViewDataSource {
     
     @IBOutlet var vwView: UITableView!
     @IBOutlet weak var scSegment: UISegmentedControl!
+    
+    @IBOutlet weak var seacher: UISearchBar!
+    
+    var animalArry = [Animal]()
+    
+    private func setUpAnimals() {
+        
+    }
+    
+    
     /*
     var foodStoreNames = ["늘해랑", "번개반점", "아딸", "왕짜장", "토마토 도시락", "홍콩반점"]
     var foodStoreThumbnail = ["01", "02", "03", "04", "05", "06"]
@@ -42,6 +52,7 @@ class MyTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAnimal()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -68,7 +79,20 @@ class MyTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RE", for: indexPath)
             as! FoodStoreTableViewCell
         // Configure the cell...
+        class Animal{
+            let name: String
+            let category: AnimalType
+            init(name: String, category: AnimalType){
+                self.name = name
+                self.category = catgory
+            }
+            
+        }
         
+        enum AnimaType: String {
+            case cat = "늘해랑"
+            case dog = "번개반점"
+        }
 //        cell.foodStoreCellName.text = foodStoreNames[indexPath.row]
 //        cell.foodStoreCellImage.image = UIImage(named: foodStoreThumbnail[indexPath.row])
 //        cell.foodStoreCellAddress.text = foodStoreAddress[indexPath.row]
